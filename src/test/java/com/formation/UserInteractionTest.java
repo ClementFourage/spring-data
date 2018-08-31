@@ -19,13 +19,13 @@ import com.formation.user.UserInteraction;
 //l'injection des beans
 @RunWith(SpringRunner.class)
 public class UserInteractionTest {
-	@Autowired
-	private UserInteraction interaction;
-
-	@Test
-	public void showCaptainAge() {
-		assertEquals(58, interaction.sayTheCaptainAgeForAFamousThreeMast());
-		System.out.println(interaction.sayTheCaptainAgeForAFamousThreeMast());
-	}
-	
+//	@Autowired
+//	private UserInteraction interaction;
+//
+//	@Test
+//	public void showCaptainAge() {
+//		assertEquals(58, interaction.sayTheCaptainAgeForAFamousThreeMast());
+//		System.out.println(interaction.sayTheCaptainAgeForAFamousThreeMast());
+//	}
+//	
 }
