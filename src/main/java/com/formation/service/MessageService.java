@@ -8,16 +8,16 @@ import java.util.List;
  */
 
 public interface MessageService {
-	void send(Message message);
+	void send(MessageDto message);
 
-	void edit(Message editedMsg);
+	void edit(MessageDto editedMsg);
 
 	void delete(String fromUser, String toUser);
 
-	List<Message> findAllMessages();
+	List<MessageDto> findAllMessages();
 
-	List<Message> findMessageSendToAUserADay(String toUser, LocalDate day);
+	List<MessageDto> findMessageSendToAUserADay(String toUser, LocalDate day);
 
-	List<Message> findAllMessageFromUser(String fromUser);
+	List<MessageDto> findAllMessageFromUser(String fromUser);
 	
 }

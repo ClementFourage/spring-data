@@ -2,62 +2,34 @@ package com.formation.service;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "message")
-public class Message {
+public class MessageDto {
 	
-	@Id
-	@Column(name = "ID")
-	private int id;
-	
-	@Column(name = "fromUser")
 	private String fromUser;
-	
-	@Column(name = "toUser")
 	private String toUser;
-	
-	@Column(name = "content")
 	private String content;
-	
-	@Column(name = "event_time")
 	private LocalDateTime eventTime;
 	
-	public Message(int id, String fromUser, String toUser, String content) {
+	public MessageDto(String fromUser, String toUser, String content) {
 		super();
-		this.id = id;
 		this.fromUser = fromUser;
 		this.toUser = toUser;
 		this.content = content;
 		this.eventTime = LocalDateTime.now();
 	}
 	
-	public Message() {
+	public MessageDto() {
 
 	}
 	
-	public Message(int id, String content) {
-		this.id = id;
+	public MessageDto(String content) {
 		this.content = content;
 		this.eventTime = LocalDateTime.now();
 	}
 	
 	@Override
 	public String toString() {
-		return "Message [id=" + id + ", fromUser=" + fromUser + ", toUser=" + toUser + ", content=" + content
+		return "Message [fromUser=" + fromUser + ", toUser=" + toUser + ", content=" + content
 				+ ", eventTime=" + eventTime + "]";
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getFromUser() {

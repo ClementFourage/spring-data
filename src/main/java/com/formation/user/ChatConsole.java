@@ -7,36 +7,41 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.formation.service.Message;
+import com.formation.service.MessageDto;
 import com.formation.service.MessageService;
 
 @Component
 public class ChatConsole {
+	
+	private int id;
 	private String currentUser;
 	
 	@Autowired
 	private MessageService service;
-	private int id;
 
 	public void sendHelloTo(String toUser) {
-		service.send(new Message(id, currentUser, toUser, MessageFormat.format("Hello {0} !", toUser)));
+		service.send(new MessageDto(currentUser, toUser, MessageFormat.format("Hello {0} !", toUser)));
 		id++;
 	}
 
 	public void sendGoodbyeTo(String toUser) {
-		service.send(new Message(id, currentUser, toUser, MessageFormat.format("Goodbye {0} !", toUser)));
+		service.send(new MessageDto(currentUser, toUser, MessageFormat.format("Goodbye {0} !", toUser)));
 		id++;
 	}
 	
 	public void editMessage(String content, Integer idMessage) {
-		service.edit(new Message(idMessage, content));
+		//service.edit(new MessageDto(idMessage, content));
 	}
 	
 	public void deleteMessageToUser(String toUser) {
 		service.delete(currentUser, toUser);
 	}
 	
-	public List<Message> findMessageToUserToday(String toUser) {
+	public List<MessageDto> findAllMessages(){
+		return null;
+	}
+	
+	public List<MessageDto> findMessageToUserToday(String toUser) {
 		return service.findMessageSendToAUserADay(toUser, LocalDate.now());
 	}
 

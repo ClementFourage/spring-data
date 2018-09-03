@@ -27,15 +27,15 @@ public class ChatConsoleTest  {
 		//TODO : Vérifier qu'on a 2 messages avec Bob en destinataire dans la base
 		
 		// Modifier l'interaction avec bob :
-		chatConsole.editMessage("Big Up bob !", 1);
+		//chatConsole.editMessage("Big Up bob !", 1);
 		
 		//TODO Vérifier qu'on a bien toujours 2 éléments et qu'on a un message avec le contenu "Big Up bob!"
 		
 		//Supprimer les interactions avec bob :
-		chatConsole.deleteMessageToUser("bob");
+		//chatConsole.deleteMessageToUser("bob");
 		
 		//TODO Vérifier qu'on n' a plus d'interactions avec bob
-		chatConsole.findMessageToUserToday("foo");
+		//chatConsole.findMessageToUserToday("foo");
 		
 		//TODO Vérifier ce qui a été dit à foo aujourd'hui : Hello ! et Goodbye !
 	}
