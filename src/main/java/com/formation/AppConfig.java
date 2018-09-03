@@ -8,9 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.formation.service.FeedbackToDatabaseService;
-import com.formation.service.IFeedbackService;
-import com.formation.user.UserInteraction;
+import com.formation.service.MessageToDatabaseService;
+import com.formation.service.MessageService;
+import com.formation.user.ChatConsole;
 
 import database.MariaDBConfig;
 
@@ -32,13 +32,13 @@ public class AppConfig {
 	}
 	
 	@Bean
-	public IFeedbackService getFeedbackService() {
-		return new FeedbackToDatabaseService();
+	public MessageService getFeedbackService() {
+		return new MessageToDatabaseService();
 	}
 	
 	@Bean
-	public UserInteraction UserInteraction() {
-		return new UserInteraction();
+	public ChatConsole UserInteraction() {
+		return new ChatConsole();
 	}
 	
 }
