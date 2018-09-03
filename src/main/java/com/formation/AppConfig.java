@@ -40,7 +40,7 @@ public class AppConfig {
 	vendorAdapter.setShowSql(true);
 	LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
 	factory.setJpaVendorAdapter(vendorAdapter);
-	factory.setPackagesToScan("com.formation.dao","com.formation.entity"); // Ajouter les packages à scanner par l'EntityManager pour gérer les repositories et les entities JPA
+	factory.setPackagesToScan("com.formation.dao","com.formation.service"); // Ajouter les packages à scanner par l'EntityManager pour gérer les repositories et les entities JPA
 	factory.setDataSource(dataSource);
 	factory.afterPropertiesSet();
 	return factory.getObject();

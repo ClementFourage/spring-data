@@ -16,7 +16,7 @@ public class MessageDaoImpl implements MessageDao {
 
 	@Override
 	public void save(Message message) {
-		
+		em.persist(message);
 	}
 
 	@Override
