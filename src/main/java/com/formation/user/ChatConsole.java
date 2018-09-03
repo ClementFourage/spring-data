@@ -16,13 +16,16 @@ public class ChatConsole {
 	
 	@Autowired
 	private MessageService service;
+	private int id;
 
 	public void sendHelloTo(String toUser) {
-		service.send(new Message(1, currentUser, toUser, MessageFormat.format("Hello {0} !", toUser)));
+		service.send(new Message(id, currentUser, toUser, MessageFormat.format("Hello {0} !", toUser)));
+		id++;
 	}
 
 	public void sendGoodbyeTo(String toUser) {
-		service.send(new Message(2, currentUser, toUser, MessageFormat.format("Goodbye {0} !", toUser)));
+		service.send(new Message(id, currentUser, toUser, MessageFormat.format("Goodbye {0} !", toUser)));
+		id++;
 	}
 	
 	public void editMessage(String content, Integer idMessage) {
